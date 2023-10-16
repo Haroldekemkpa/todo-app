@@ -56,5 +56,33 @@ input, button {
     background-color: var(--darker);
     padding: 1rem;
     border-radius: 1rem;
-    
+    margin-right: 1rem;
+    color: var(--light);
+    font-size: 1.25rem;
+
 }
+
+#new-task-input::placeholder {
+    color: var(--grey);
+}
+
+#new-task-submit {
+    color: var(--pink);
+    font-size: 1.25rem;
+    font-weight: 700;
+    background-image: linear-gradient(to right, var(--pink), var(--purple));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+#new-task-submit:hover {
+    opacity: 0.8;
+}
+#new-task-submit:active {
+    opacity: 0.8;
+}
+
