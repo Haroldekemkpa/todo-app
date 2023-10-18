@@ -2,7 +2,9 @@ const element = {
     todoForm: document.querySelector('#new-task-form'),
     todoInput: document.querySelector('#new-task-input'),
     todolistElement: document.querySelector('#tasks'),
-    todoTasks: document.querySelector('#tasks')
+    todoTasks: document.querySelector('.tasks'),
+    btnEdit: document.querySelector('.edit'),
+    btnDelete: document.querySelector('.delete')
 }
 
 window.addEventListener('load', () => {
@@ -12,8 +14,6 @@ window.addEventListener('load', () => {
 
     form.addEventListener('submit', (e) => {
         e.preventDefault();
-
-        console.log('task loggged');
 
         const task = input.value;
 
@@ -37,10 +37,18 @@ window.addEventListener('load', () => {
                 </div>
             `;   
              
-           
-            element.todoTasks.insertAdjacentHTML('beforeend', markUp);
-
+            input.value = " ";
+            element.todoInput.blur();
+            element.todolistElement.insertAdjacentHTML('beforeend', markUp);
         }
+
+        element.btnEdit.addEventListener('click', () => {
+            if(element.btnEdit.innerText.toLowercase() === 'Edit') {
+                todoTasks.removeAttribute('readonly');
+                todoTasks.focus();
+                btnEdit.innerHtml.toLowercase = "save"
+            }
+        })
         
 
     })
